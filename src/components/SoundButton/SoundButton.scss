@@ -1,0 +1,248 @@
+@import 'mainStyles/variables/variables.scss';
+
+.sound_btn {
+	position: absolute;
+	top: 50%;
+	margin-top: -13vw;
+	right: 5.05vw;
+	width: 6vw;
+	border-radius: 50%;
+	z-index: 3;
+	transform: translate(50%, -50%);
+	z-index: 5;
+	user-select: none;
+	&.main {
+		.snd {
+			&__svg_path {
+				stroke: #fff;
+			}
+			&__select {
+				border-color: $color_main_dark;
+				color: $color_main_dark;
+			}
+			&__i_svg {
+				fill: $color_main_dark;
+			}
+			&__i_inner {
+				fill: $color_main_light;
+			}
+		}
+	}
+	&.color1 {
+		.snd {
+			&__svg_path {
+				stroke: $color_1_dark;
+			}
+			&__select {
+				border-color: $color_1_dark;
+				color: $color_1_dark;
+			}
+			&__i_svg {
+				fill: $color_1_dark;
+			}
+			&__i_inner {
+				fill: $color_1_light;
+			}
+		}
+	}
+	&.color2 {
+		.snd {
+			&__svg_path {
+				stroke: $color_2_dark;
+			}
+			&__select {
+				border-color: $color_2_dark;
+				color: $color_2_dark;
+			}
+			&__i_svg {
+				fill: $color_2_dark;
+			}
+			&__i_inner {
+				fill: $color_2_light;
+			}
+		}
+	}
+	&.color3 {
+		.snd {
+			&__svg_path {
+				stroke: $color_3_dark;
+			}
+			&__select {
+				border-color: $color_3_dark;
+				color: $color_3_dark;
+			}
+			&__i_svg {
+				fill: $color_3_dark;
+			}
+			&__i_inner {
+				fill: $color_3_light;
+			}
+		}
+	}
+	&.color4 {
+		.snd {
+			&__svg_path {
+				stroke: $color_4_dark;
+			}
+			&__select {
+				border-color: $color_4_dark;
+				color: $color_4_dark;
+			}
+			&__i_svg {
+				fill: $color_4_dark;
+			}
+			&__i_inner {
+				fill: $color_4_light;
+			}
+		}
+	}
+	.snd{
+		&__skeleton {
+			padding-bottom: 100%;
+			border-radius: 50%;
+		}
+		&__content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			perspective: 1000;
+		}
+		&__svg {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 1;
+			&_path {
+				fill: #fff;
+				stroke: none;
+				stroke-width: 10px;
+			}
+		}
+		&__circle {
+			width: 62%;
+			height: 62%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border-radius: 50%;
+			z-index: 2;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+		}
+		&__icon_wr {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			border-radius: 50%;
+		}
+		&__icon {
+			position: absolute;
+			z-index: 2;
+			top: -1px;
+			left: -1px;
+			right: -1px;
+			bottom: -1px;
+			border-radius: 50%;
+			backface-visibility: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: .4s;
+			transform-style: preserve-3d;
+			transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+			&.reverse {
+				z-index: 1;
+				backface-visibility: visible;
+			}
+		}
+		&__i_svg {
+			width: 100%;
+			height: 100%;
+			fill: $color_main_dark;
+			stroke: none;
+			path {
+				fill: none;
+				stroke: #fff;
+				stroke-width: 4px;
+			}
+			text {
+				font-size: 44px;
+				fill: #fff;
+				text-transform: uppercase;
+			}
+		}
+		&__i_inner {
+			fill: $color_main_light;
+		}
+		&__i_letter path {
+			stroke: none;
+			fill: #fff;
+		}
+	}
+	&.active {
+		.snd {
+			&__icon {
+				transform: rotate3d(60, 60, 0, 180deg);
+			}
+		}
+	}
+}
+	
+
+body.withJs{
+	.sound_btn {
+		.snd {
+			&__content {
+				transform: scale(0);
+				transition: transform .6s ease;
+				transition-delay: 1.2s;
+			}
+		}
+		&.show {
+			.snd {
+				&__content {
+					transform: none;
+				}
+			}
+		}
+	}
+}
+
+@media (orientation: portrait) {
+	.sound_btn {
+		top: 12.7vh;
+		margin-top: 0;
+		margin-left: -14.4vh;
+		width: 85vh;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		.snd {
+			&__svg_path {
+				stroke-width: 7px;
+			}
+			&__circle {
+				width: 65%;
+				height: 65%;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 980px) and (orientation: landscape) {
+	.sound_btn {
+		width: 8vw;
+		right: 4.95vw;
+		.snd {
+			&__svg_path {
+				stroke-width: 6px;
+			}
+			&__circle {
+				width: 65%;
+				height: 65%;
+			}
+		}
+	}
+}

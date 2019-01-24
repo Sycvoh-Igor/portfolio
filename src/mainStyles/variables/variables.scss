@@ -1,0 +1,62 @@
+$main_font: "Helvetica", sans-serif;
+$text_color: #191919;
+$color_main_dark: #191919;
+$color_main_light: #444;
+$color_1_light: #FFE473; //FFE473 //ffd843
+$color_1_dark: #bfa956; //BFA430 //bfa956
+$color_2_light: #CB89C3; //ff5d99
+$color_2_dark: #bf6486; //bf6486
+$color_3_light: #707FA4; // 0091d2 //69C2E9
+$color_3_dark: #4A5779; // 277a9e //4597BA
+$color_4_light: #bad700;
+$color_4_dark: #90a128;
+$color_err_light: #FF6E40;
+$color_err_dark: #FF3D00;
+
+
+
+@function decimal-round ($number, $digits: 0, $mode: round){
+	$n: 1;
+	// $number must be a number
+	@if type-of($number) != number {
+		@warn '#{ $number } is not a number.';
+		@return $number;
+	}
+	// $digits must be a unitless number
+	@if type-of($digits) != number {
+		@warn '#{ $digits } is not a number.';
+		@return $number;
+	} @else if not unitless($digits) {
+		@warn '#{ $digits } has a unit.';
+		@return $number;
+	}
+	@for $i from 1 through $digits {
+		$n: $n * 10;
+	}
+	@if $mode == round {
+		@return round($number * $n) / $n;
+	} @else if $mode == ceil {
+		@return ceil($number * $n) / $n;
+	} @else if $mode == floor {
+		@return floor($number * $n) / $n;
+	} @else {
+		@warn '#{ $mode } is undefined keyword.';
+		@return $number;
+	}
+}
+@function vw($px, $screenWeedth: 1280){
+	//пример width: vw(80) - результат width:6.25vw
+	@return decimal-round($px * 100 / $screenWeedth, 3) + vw;
+}
+	
+
+@function vh($px, $screenHeight: 720){
+	//пример width: vw(80) - результат width:6.25vw
+	@return decimal-round($px * 100 / $screenHeight, 3) + vh;
+}
+
+@function vwLazy($px, $screenWeedth: 1280){
+
+	@return calc(#{$px}px + (100vw - #{$screenWeedth}px) / 3000 * #{$px} );
+}
+	

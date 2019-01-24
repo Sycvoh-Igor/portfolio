@@ -1,0 +1,97 @@
+@import './variables/variables.scss';
+@import './animations.scss';
+
+*{
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent !important;
+	outline: none !important;
+	vertical-align: baseline;
+	&::selection {
+		background: rgba(0, 0, 0, .2);
+		color: inherit;
+	}
+}
+img::selection {
+	background: none;
+}
+	
+*::-webkit-input-placeholder{
+	color: $text_color;
+	text-align: center;
+	opacity: 1;
+}
+	
+*:-moz-placeholder{
+	color: $text_color;
+	text-align: center;
+	opacity: 1;
+}
+	
+*::-moz-placeholder{
+	color: $text_color;
+	text-align: center;
+	opacity: 1;
+}
+	
+
+*:-ms-input-placeholder{
+	color: $text_color;
+	text-align: center;
+	opacity: 1;
+}
+	
+*:focus{
+	&::-webkit-input-placeholder{
+		opacity: 0;
+	}
+	&:-moz-placeholder{
+		opacity: 0;
+	}
+	&::-moz-placeholder{
+		opacity: 0;
+	}
+	&:-ms-input-placeholder{
+		opacity: 0;
+	}
+}
+	
+html, body, p, h1, h2, h3, h4, h5{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: $main_font;
+}
+
+button::-moz-focus-inner{
+	border: none;
+}
+img{
+	border: none;
+}
+.hidden {
+	display: none !important;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+

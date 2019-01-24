@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="120.00001"
+   height="120.00001"
+   viewBox="0 0 120.00001 120.00001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="circle-shadow.svg">
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath854">
+      <rect
+         style="opacity:0.825;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.02985096;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0"
+         id="rect856"
+         width="30.178572"
+         height="71.071426"
+         x="83.75"
+         y="120.01965" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter1350">
+      <feFlood
+         flood-opacity="0.258824"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1340" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="out"
+         result="composite1"
+         id="feComposite1342" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur1344" />
+      <feOffset
+         dx="0"
+         dy="2.77556e-017"
+         result="offset"
+         id="feOffset1346" />
+      <feComposite
+         in="offset"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite2"
+         id="feComposite1348" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="51.43975"
+     inkscape:cy="56.53312"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <sodipodi:guide
+       position="304.83293,-176.17542"
+       orientation="1,0"
+       id="guide821"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="282.60958,-58.997703"
+       orientation="1,0"
+       id="guide823"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="327.05629,-192.33785"
+       orientation="1,0"
+       id="guide825"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="348.26949,-184.25662"
+       orientation="1,0"
+       id="guide827"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="376.55377,-285.27186"
+       orientation="1,0"
+       id="guide829"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="259.88114,-308.00032"
+       orientation="1,0"
+       id="guide831"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="231.59687,-302.94955"
+       orientation="1,0"
+       id="guide833"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="453.32535,-389.31761"
+       orientation="0,1"
+       id="guide835"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="304.83293,-328.20337"
+       orientation="0,1"
+       id="guide837"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="304.83293,-447.90645"
+       orientation="0,1"
+       id="guide839"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="62.396317,-350.42673"
+       orientation="0,1"
+       id="guide1452"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="353.26887,-424.67373"
+       orientation="0,1"
+       id="guide1454"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="327.05628,-341.03403"
+       orientation="0,1"
+       id="guide1458"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="354.45668,-436.534"
+       orientation="0,1"
+       id="guide1460"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="311.78018,-332.05316"
+       orientation="0,1"
+       id="guide1476"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="277.61221,-337.19808"
+       orientation="0,1"
+       id="guide1478"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="304.83293,-442.49957"
+       orientation="0,1"
+       id="guide1480"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="358.24475,-431.74402"
+       orientation="0,1"
+       id="guide1482"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-11.344818,-79.841507)">
+    <circle
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.74485397;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1350)"
+       id="path858"
+       cx="71.344818"
+       cy="139.84151"
+       r="50" />
+  </g>
+</svg>

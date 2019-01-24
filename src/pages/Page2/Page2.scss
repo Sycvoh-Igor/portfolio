@@ -1,0 +1,158 @@
+@import 'mainStyles/variables/variables.scss';
+
+.page2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $color_2_light;
+	overflow: hidden;
+	.title_block {
+		position: absolute;
+		top: 50%;
+		margin-top: vw(-258);
+		margin-left: vw(-95);
+		width: vw(190);
+		left: 50%;
+		display: flex;
+		color: #fff;
+		flex-direction: column;
+		align-items: center;
+		z-index: 2;
+	}
+	.tb {
+		&__image {
+			width: vw(120);
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		&__title {
+			margin-top: vw(15);
+			h2 {
+				font-size: vw(38);
+				letter-spacing: 1px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.infogram_cirlce {
+		top: 50%;
+		left: 57%;
+		margin-top: 4.6vw;
+		transform: translateY(-50%);
+	}
+	.infogram_sheme {
+		top: 50%;
+		left: 27.5%;
+		margin-top: 5.3vw;
+		width: 40vw;
+		transform: translate(-50%, -50%) translateY(9px);
+	}
+}
+
+body.withJs{
+	.page2 {
+		.title_block {
+			opacity: 0;
+			transform: translateY(10%);
+			&.show {
+				opacity: 1;
+				transform: none;
+				transition: transform .6s ease, opacity .6s ease-in;
+				transition-delay: .7s;
+			}
+		}
+	}
+}
+
+/* media */
+
+@media (min-width: 1281px) {
+	.page2 {
+		.title_block {
+			margin-top: vwLazy(-258);
+			margin-left: vwLazy(-95);
+			width: vwLazy(190);
+		}
+		.tb {
+			&__image {
+				width: vwLazy(120);
+			}
+			&__title {
+				margin-top: vwLazy(15);
+				h2 {
+					font-size: vwLazy(38);
+					letter-spacing: vwLazy(1);
+				}
+			}
+		}
+	}
+}
+
+@media (orientation: portrait) {
+	.page2 {
+		.title_block {
+			top: 17.2%;
+			margin-top: 0;
+			margin-left: vh(-80);
+			width: vh(160);
+		}
+		.tb {
+			&__image {
+				display: none;
+			}
+			&__title {
+				margin-top: 0;
+				h2 {
+					font-size: vh(30);
+					letter-spacing: vh(1);
+				}
+			}
+		}
+		.infogram_cirlce {
+			top: auto;
+			bottom: 12%;
+			left: 50%;
+			margin-top: 0;
+			transform: translateX(-59%);
+			width: 100%;
+			max-width: 34vh;
+		}
+		.infogram_sheme {
+			top: 23%;
+			left: 50%;
+			margin-top: 0;
+			width: 100%;
+			max-width: 56vh;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+@media (max-width: 980px) and (orientation: landscape) {
+	.page2 {
+		.title_block {
+			margin-top: vw(-188);
+			margin-left: vw(-150);
+			width: vw(300);
+		}
+		.tb {
+			&__image {
+				display: none;
+			}
+			&__title {
+				margin-top: 0;
+				h2 {
+					font-size: vw(44);
+				}
+			}
+		}
+		.infogram_sheme {
+			top: 46%;
+		}
+	}
+}

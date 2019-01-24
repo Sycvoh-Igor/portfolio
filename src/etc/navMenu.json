@@ -1,0 +1,83 @@
+{
+	"ru" : {
+		"home" : {
+			"name" : "Главная",
+			"link" : "/ru/",
+			"desc" : ""
+		},
+		"page1" : {
+			"name" : "О себе",
+			"link" : "/ru/about",
+			"desc" : "Информация<br> об авторе"
+		},
+		"page2" : {
+			"name" : "Навыки",
+			"link" : "/ru/skills",
+			"desc" : "Навыки<br> и умения<br> разработки"
+		},
+		"page3" : {
+			"name" : "Портфолио",
+			"link" : "/ru/portfolio",
+			"desc" : "Примеры моих<br> работ"
+		},
+		"page4" : {
+			"name" : "Контакты",
+			"link" : "/ru/contacts",
+			"desc" : "Возможность<br> связаться со мной"
+		}
+	},
+	"ua" : {
+		"home" : {
+			"name" : "Головна",
+			"link" : "/ua/",
+			"desc" : ""
+		},
+		"page1" : {
+			"name" : "Про себе",
+			"link" : "/ua/about",
+			"desc" : "Інформація<br> про автора"
+		},
+		"page2" : {
+			"name" : "Навики",
+			"link" : "/ua/skills",
+			"desc" : "Навики<br> та вміння<br> розробки"
+		},
+		"page3" : {
+			"name" : "Портфоліо",
+			"link" : "/ua/portfolio",
+			"desc" : "Приклади моїх<br> робіт"
+		},
+		"page4" : {
+			"name" : "Контакти",
+			"link" : "/ua/contacts",
+			"desc" : "Можливість<br> связатися зі мною"
+		}
+	},
+	"en" : {
+		"home" : {
+			"name" : "Home",
+			"link" : "/en/",
+			"desc" : ""
+		},
+		"page1" : {
+			"name" : "About",
+			"link" : "/en/about",
+			"desc" : "Information<br> about me"
+		},
+		"page2" : {
+			"name" : "Skills",
+			"link" : "/en/skills",
+			"desc" : "Skills<br> & abilities"
+		},
+		"page3" : {
+			"name" : "Portfolio",
+			"link" : "/en/portfolio",
+			"desc" : "Examples of<br> my works"
+		},
+		"page4" : {
+			"name" : "Contacts",
+			"link" : "/en/contacts",
+			"desc" : "How<br> contact with me"
+		}
+	}
+}

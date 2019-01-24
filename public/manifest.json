@@ -1,0 +1,25 @@
+{
+	"name": "Портфолио",
+	"short_name": "Портфолио",
+	"lang": "ru-RU",
+	"start_url": "/ru",
+	"display": "browser",
+	"icons": [
+		{
+			"src": "/favicons/icon.192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicons/icon.512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme": {
+		"colors": {
+			"accentcolor": "#191919",
+			"textcolor": "#fff"
+		}
+	}
+}

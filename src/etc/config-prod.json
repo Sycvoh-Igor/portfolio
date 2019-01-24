@@ -1,0 +1,14 @@
+{
+	"apiHost" : "https://sychov-igor.herokuapp.com/",
+	"homeData": "api/home",
+	"pageOneData": "api/page1",
+	"pageTwoData": "api/page2",
+	"pageThreeData": "api/page3",
+	"pageFourData": "api/page4",
+	"mailData": "api/mail",
+	"mail":{
+			"key" : "####",
+			"subject" : "Сообщение с сайта sychov-igor.herokuapp.com",
+			"sendto" : ["igoralexsy@gmail.com"]
+	}
+}

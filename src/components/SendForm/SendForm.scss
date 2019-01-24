@@ -1,0 +1,494 @@
+@import 'mainStyles/variables/variables.scss';
+
+.send_form {
+	width: vw(280);
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	&.fullscreen {
+		position: fixed !important;
+		width: 140% !important;
+		max-width: 100vh;
+		top: 50% !important;
+		left: 50% !important;
+		right: auto !important;
+		bottom: auto !important;
+		transform: translate(-50%, -50%) !important;
+		z-index: 100;
+		.snf {
+			&__row.big {
+				margin-bottom: 15%;
+			}
+		}
+	}
+	&.show {
+		opacity: 1;
+		transition: opacity .6s ease-in .8s;
+	}
+	.snf {
+		&__skeleton {
+			padding-bottom: 85%;
+		}
+		&__svg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			svg {
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+			}
+			.main_figure {
+				fill: #fff;
+			}
+			.circle {
+				fill: #000;
+			}
+		}
+		&__content {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		&__row {
+			flex-shrink: 0;
+			height: vw(40);
+			position: relative;
+			&.big {
+				height: 40%;
+				margin: vw(30) 0 0;
+				flex-grow: 1;
+				flex-shrink: 1;
+			}
+			&.error {
+				&:after {
+					background: $color_err_dark;
+				}
+				input, textarea {
+					border-color: $color_err_dark;
+					color: $color_err_dark;
+				}
+				.snf__email_img:after, .snf__text_img:after {
+					color: $color_err_dark;
+				}
+				.snf__email_img svg, .snf__text_svg {
+					stroke: $color_err_dark;
+				}
+			}
+		}
+		&__text {
+			margin-left: -15%;
+			margin-right: -15%;
+			height: 100%;
+			position: relative;
+			padding-top: vw(8);
+			&_img {
+				position: absolute;
+				bottom: vw(1);
+				left: vw(7);
+				width: vw(30);
+				height: vw(40);
+				&:after {
+					position: absolute;
+					content: '*';
+					bottom: 100%;
+					left: 100%;
+					display: block;
+					color: $color_4_light;
+					transform: translateY(50%);
+				}
+			}
+			&_svg {
+				width: 100%;
+				height: 100%;
+				//background: $color_err_light;
+				fill: none;
+				stroke: $color_4_light;
+				stroke-width: 16px;
+			}
+		}
+		&__inp_wr {
+			height: 100%;
+			position: relative;
+			&:after {
+				position: absolute;
+				content: '';
+				display: block;
+				top: 100%;
+				left: 50%;
+				height: 2px;
+				width: 0;
+				background: $color_4_light;
+				transform: translate(-50%, -50%);
+				transition: width .2s ease;
+			}
+			&.focus {
+				&:after {
+					width: 100%;
+					width: calc(100% + 2px);
+					transition-duration: .3s;
+				}
+			}
+		}
+		&__email_img {
+			position: absolute;
+			top: vw(3);
+			left: vw(7);
+			width: vw(30);
+			height: vw(30);
+			&:after {
+				position: absolute;
+				content: '*';
+				bottom: 100%;
+				left: 100%;
+				display: block;
+				color: $color_4_light;
+				transform: translate(-20%, 70%);
+			}
+			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				fill: none;
+				stroke: $color_4_light;
+				stroke-width: 7px;
+				stroke-linejoin: round;
+				stroke-linecap: round;
+				transition: stroke .4s ease;
+			}
+		}
+		&__btn_wr {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			width: 65%;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&__btn_skl {
+			padding-bottom: 100%;
+		}
+		&__btn {
+			position: absolute;
+			background: #fff;
+			width: 80%;
+			height: 80%;
+			top: 50%;
+			left: 50%;
+			border-radius: 50%;
+			border: none;
+			transform: translate(-50%, -50%);
+			box-shadow: 0 vw(3) vw(3) rgba(0, 0, 0, .4);
+			cursor: pointer;
+			padding: 0;
+			transition: transform .2s ease, box-shadow .2s ease;
+			overflow: hidden;
+			span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border-radius: 50%;
+				background: $color_err_dark;
+				opacity: 0;
+				transform: translate(-50%, -50%);
+				&.fade {
+					&-exit {
+						&-active {
+							opacity: .5;
+							width: 110%;
+							height: 110%;
+							transition: all .35s ease-in;
+						}
+					}
+				}
+			}
+			&:active {
+				padding: inherit;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+				transform: translate(-50%, -50%) translateY(3px);
+			}
+			&_svg {
+				width: 60%;
+				height: 60%;
+				fill: none;
+				stroke: $color_4_light;
+				stroke-width: 14px;
+				stroke-linejoin: round;
+				stroke-linecap: round;
+				transition: stroke .4s ease;
+				position: relative;
+				z-index: 2;
+			}
+		}
+		&__errors {
+			position: absolute;
+			top: -12%;
+			left: 0;
+			bottom: -12%;
+			right: 0;
+			z-index: 999;
+			border-radius: 0;
+			color: #fff;
+			font-size: vw(16);
+			&.fade {
+				&-enter {
+					opacity: 0;
+					transform: scale(0.5);
+					&-active {
+						opacity: 1;
+						transform: none;
+						transition: transform .4s ease, opacity .3s ease-in;
+					}
+				}
+				&-exit {
+					&-active {
+						opacity: 0;
+						transform: scale(0.5);
+						transition: transform .2s ease, opacity .1s ease-out;
+					}
+					&-done {
+						display: none;
+					}
+				}
+			}
+			&_ctn {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 60%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				line-height: 1.4;
+			}
+			&_sk {
+				padding-top: 100%;
+			}
+			&_msg {
+				position: absolute;
+				top: 20%;
+				left: 25%;
+				right: 25%;
+				bottom: 20%;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 2;
+			}
+			&_svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				svg {
+					width: 100%;
+					height: 100%;
+					fill: $color_err_dark;
+					storke: none;
+				}
+			}
+			&_close {
+				fill: #fff;
+				stroke: $color_err_dark;
+				stroke-width: 2px;
+				cursor: pointer;
+			}
+		}
+	}
+	form {
+		position: absolute;
+		top: 12%;
+		left: 26%;
+		right: 26%;
+		bottom: 3.2%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-bottom: 20%;
+		padding-bottom: calc(#{vw(70)} + 6.5%);
+	}
+	input, textarea{
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid $color_4_light;
+		height: 100%;
+		color:$color_4_light;
+		font-size: vw(15);
+		font-family: inherit;
+		letter-spacing: vw(1);
+		resize: none;
+		overflow: hidden;
+		border-radius: none;
+		box-shadow: none;
+		transition: border-color .4s ease, color .4s ease;
+		&:-webkit-autofill {
+			background: rgba(0, 0, 0, 0) !important;
+		}
+	}
+	input {
+		padding: 0 vw(10) 0 vw(50);
+	}
+	textarea {
+		padding: 0 vw(10) 0 vw(50);
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: vw(8);
+	}
+}
+
+@media (min-width: 1281px) {
+	.send_form {
+		
+		.snf {
+			&__inp_wr {
+				&:after {
+					height: vw(2);
+				}
+			}
+			&__errors {
+				font-size: vwLazy(16);
+			}
+		}
+		input, textarea{
+			border-bottom: vw(1) solid $color_4_light;
+			font-size: vwLazy(15);
+			letter-spacing: vwLazy(1);
+		}
+	}
+}
+
+@media (orientation: portrait) {
+	.send_form {
+		width: vh(200);
+		.snf {
+			&__row {
+				height: vh(30);
+				&.big {
+					height: 40%;
+					margin: vh(20) 0 0;
+				}
+			}
+			&__text {
+				padding-top: 0;
+				&_img {
+					position: absolute;
+					bottom: vh(1);
+					left: vh(7);
+					width: vh(30);
+					height: vh(40);
+				}
+			}
+			&__inp_wr {
+			}
+			&__email_img {
+				position: absolute;
+				top: auto;
+				bottom: vh(4);
+				left: vh(3);
+				width: vh(24);
+				height: vh(24);
+			}
+			&__btn {
+				box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+				&:active {
+					transform: translate(-50%, -50%) translateY(2px);
+				}
+			}
+			&__errors {
+				font-size: vh(14);
+			}
+		}
+		form {
+			position: absolute;
+			top: 12%;
+			left: 26%;
+			right: 26%;
+			bottom: 3.2%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-bottom: 20%;
+			padding-bottom: calc(#{vh(50)} + 6.5%);
+		}
+		input, textarea{
+			font-size: vh(13);
+			font-family: inherit;
+			letter-spacing: vh(1);
+		}
+		input {
+			padding: 0 vh(10) 0 vh(40);
+		}
+		textarea {
+			padding: vh(6) vh(10) 0 vh(50);
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+@media (max-height: 540px) and (orientation: portrait) {
+	.send_form {
+		.snf {
+			&__row {
+				height: 24px;
+				&.big {
+					height: 40%;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 980px) and (orientation: landscape) {
+	.send_form {
+		.snf {
+			&__row {
+				height: 30px;
+			}
+			&__text {
+				&_img {
+					width: 25px;
+					height: 30px;
+					left: 0;
+					bottom: 2px;
+				}
+			}
+			&__email_img {
+				top: 5px;
+				left: 0;
+				width: 20px;
+				height: 20px;
+			}
+			&__errors {
+				font-size: 11px;
+			}
+		}
+		input, textarea{
+			font-size: 11px;
+			letter-spacing: 1px;
+		}
+		input {
+			padding: 0 5px 0 30px;
+		}
+		textarea {
+			padding: 5px 5px 0 35px;
+		}
+	}
+}

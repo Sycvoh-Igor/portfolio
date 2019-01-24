@@ -1,0 +1,381 @@
+@import 'mainStyles/variables/variables.scss';
+.page1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $color_1_light;
+	overflow: hidden;
+	.title_block {
+		position: absolute;
+		bottom: 50%;
+		width: vw(190);
+		margin-bottom: 3vw;
+		margin-left: vw(-95);
+		left: 27.4vw;
+		display: flex;
+		color: #fff;
+		flex-direction: column;
+		align-items: center;
+	}
+	.tb {
+		&__image {
+			width: vw(120);
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		&__title {
+			margin-top: vw(15);
+			text-align: center;
+			h2 {
+				font-size: vw(34);
+				letter-spacing: 1px;
+				font-weight: normal;
+				text-transform: uppercase;
+				span {
+					font-size: vw(38);
+					letter-spacing: 2px;
+					font-weight: bold;
+					display: block;
+					margin-bottom: vw(1);
+				}
+			}
+		}
+	}
+	.text_block {
+		position: absolute;
+		top: 50%;
+		left: 73%;
+		height: vw(370);
+		width: vw(450);
+		margin-top: vw(-200);
+		margin-left: vw(-210);
+		overflow: hidden;
+		padding: 0 vw(20);
+		&.mob {
+			.tb__content{
+				padding-right: 12px !important;
+				padding-left: 12px !important;
+			}
+		}
+		.tb {
+			&__bg{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				z-index: 2;
+				box-shadow: inset 0 vw(-20) vw(20) vw(5) $color_1_light, inset 0 vw(20) vw(20) vw(5) $color_1_light;
+				pointer-events: none;
+			}
+			&__content {
+				margin: vw(30) 0;
+				padding-right: vw(26);
+				>*:first-child{
+					margin-top: 0 !important;
+				}
+				>*:last-child{
+					margin-bottom: 0 !important;
+				}
+			}
+			&__rail {
+				top: vw(30);
+				bottom: vw(34);
+				right: 0;
+				background: $color_1_light;
+				border-radius: 4px;
+				>div {
+					background: $color_1_dark !important;
+					z-index: 1;
+				}
+				&:after {
+					position: absolute;
+					display: block;
+					content: '';
+					top: vw(-30);
+					bottom: vw(-34);
+					left: 0;
+					right: vw(-2);
+					background: $color_1_light;
+					z-index: 0;
+				}
+			}
+		}
+		a {
+			color: inherit;
+		}
+		h3 {
+			font-size: vw(20);
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-bottom: vw(18);
+			margin-top: vw(50);
+			span {
+				display: inline-block;
+				position: relative;
+				&:after {
+					position: absolute;
+					display: block;
+					content: '';
+					top: 100%;
+					margin-top: vw(2);
+					right: 0;
+					width: vw(44);
+					height: 1px;
+					background: $text_color;
+				}
+			}
+		}
+		p {
+			font-size: vw(14);
+			line-height: 1.5;
+			letter-spacing: 0.5px;
+		}
+		ul {
+			margin: 0;
+			font-size: vw(14);
+			line-height: 1.5;
+			letter-spacing: 0.5px;
+			padding-left: vw(40);
+		}
+	}
+}
+
+body.withJs{
+	.page1 {
+		.title_block {
+			opacity: 0;
+			transform: translateY(10%);
+			&.show {
+				opacity: 1;
+				transform: none;
+				transition: transform .6s ease, opacity .6s ease-in;
+				transition-delay: .7s;
+			}
+		}
+		.text_block {
+			opacity: 0;
+			h3 span:after {
+				right: calc(100% - 30px);
+				opacity: 0;
+			}
+			&:not(.show) {
+				.tb__rail > div {
+					opacity: 0 !important;
+				}
+			}
+			&.show {
+				opacity: 1;
+				transform: none;
+				transition: opacity .6s ease-in .7s;
+				.tb__rail > div {
+					transition: opacity .6s ease 1.2s;
+				}
+				h3 span:after {
+					right: 0;
+					opacity: 1;
+					transition: right .6s ease, opacity .6s ease-in;
+					transition-delay: 1s;
+				}
+			}
+		}
+	}
+}
+
+/* media */
+
+@media (min-width: 1281px) {
+	.page1 {
+		.title_block {
+			width: vwLazy(190);
+			margin-left: vwLazy(-95);
+		}
+		.tb {
+			&__image {
+				width: vwLazy(120);
+			}
+			&__title {
+				margin-top: vwLazy(15);
+				h2 {
+					font-size: vwLazy(34);
+					letter-spacing: vwLazy(1);
+					span {
+						font-size: vwLazy(38);
+						letter-spacing: vwLazy(2);
+						margin-bottom: vwLazy(1);
+					}
+				}
+			}
+		}
+		.text_block {
+			h3 {
+				font-size: vwLazy(20);
+				margin-top: vwLazy(50);
+				margin-bottom: vwLazy(18);
+				span {
+					&:after {
+						margin-top: vwLazy(2);
+						width: vwLazy(44);
+					}
+				}
+			}
+			p {
+				font-size: vwLazy(14);
+				letter-spacing: vwLazy(0.5);
+			}
+			ul {
+				font-size: vwLazy(14);
+				letter-spacing: vwLazy(0.5);
+				padding-left: vwLazy(40);
+			}
+		}
+	}
+}
+
+@media (orientation: portrait) {
+	.page1 {
+		.title_block {
+			position: absolute;
+			bottom: auto;
+			top: 22%;
+			width: vh(160);
+			margin-bottom: 0;
+			margin-left: vh(-80);
+			left: 50%;
+		}
+		.tb {
+			&__image {
+				width: vh(80);
+				display: none;
+			}
+			&__title {
+				margin-top: 0;
+				h2 {
+					font-size: vh(30);
+					letter-spacing: vh(1);
+					span {
+						font-size: vh(34);
+						letter-spacing: vh(2);
+						margin-bottom: vh(3);
+					}
+				}
+			}
+		}
+		.text_block {
+			top: 47%;
+			left: 50%;
+			height: auto;
+			bottom: 14%;
+			width: 100%;
+			max-width: 40vh;
+			margin-top: 0;
+			margin-left: 0;
+			padding: 0 vh(8) 0 vh(8);
+			transform: translateX(-50%) !important;
+			.tb {
+				&__bg{
+					box-shadow: inset 0 vh(-20) vh(20) vh(5) $color_1_light, inset 0 vh(20) vh(20) vh(5) $color_1_light;
+				}
+				&__content {
+					margin: vh(30) 0;
+					padding-right: vh(30);
+					padding-left: vh(10);
+					>*:last-child{
+						margin-bottom: 0;
+					}
+				}
+				&__rail {
+					top: vh(30);
+					bottom: vh(34);
+					border-radius: vh(2);
+					width: vh(4) !important;
+					&:after {
+						top: vh(-30);
+						bottom: vh(-34);
+						right: vh(-2);
+					}
+				}
+			}
+			h3 {
+				font-size: vh(17);
+				margin-bottom: vh(12);
+				margin-top: vh(30);
+				span {
+					&:after {
+						margin-top: vh(2);
+						width: vh(30);
+					}
+				}
+			}
+			p {
+				font-size: vh(15);
+			}
+			ul {
+				font-size: vh(15);
+				padding-left: vh(40);
+			}
+		}
+	}
+}
+
+@media (max-width: 980px) and (orientation: landscape) {
+	.page1 {
+		.title_block {
+			width: vw(240);
+			margin-left: vw(-120);
+			margin-bottom: 3vw;
+		}
+		.tb {
+			&__image {
+				display: none;
+			}
+			&__title {
+				margin-top: 0;
+				h2 {
+					font-size: vw(40);
+					span {
+						font-size: vw(44);
+						margin-bottom: vw(1);
+					}
+				}
+			}
+		}
+		.text_block {
+			height: vw(370);
+			width: vw(530);
+			margin-left: vw(-300);
+			.tb {
+				&__content {
+					padding-right: 10px;
+					margin: 24px 0 34px;
+				}
+				&__rail {
+					top: 20px;
+					bottom: 20px;
+				}
+			}
+			h3 {
+				font-size: 15px;
+				margin-top: 30px;
+				margin-bottom: 15px;
+				span {
+					&:after {
+						margin-top: 2px;
+						width: 34px;
+					}
+				}
+			}
+			p {
+				font-size: 12px;
+			}
+			ul {
+				font-size: 12px;
+				padding-left: 30px;
+			}
+		}
+	}
+}

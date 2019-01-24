@@ -1,0 +1,38 @@
+@keyframes rotate {
+	0% {
+		transform: none;
+	}
+
+	5% {
+		transform: none;
+	}
+
+	95% {
+		transform: rotate(360deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes scale {
+	0% {
+		transform: none;
+	}
+
+	5% {
+		transform: none;
+	}
+
+	50% {
+		transform: scale(2.4);
+	}
+
+	95% {
+		transform: none;
+	}
+
+	100% {
+		transform: none;
+	}
+}

@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules
+
+# Local development
+*.env
+*.dev
+.DS_Store
+
+# Other
+public/assets
+
+

@@ -1,0 +1,97 @@
+@import 'mainStyles/variables/variables.scss';
+
+.infogram_sheme {
+	position: absolute;
+	width: 520px;
+	.is {
+		&__block_wr {
+			width: 100%;
+			padding-bottom: 59.615%;
+		}
+		&__block {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		&__svg {
+			width: 100%;
+			height: 100%;
+			// background: red;
+		}
+		&__head {
+			fill: #fff;
+			stroke: none;
+			font-size: 28px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		&__item {
+			fill: #fff;
+			stroke: none;
+			font-family: $main_font;
+			&_h {
+				text-transform: uppercase;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			&_m {
+				font-size: 16px;
+			}
+		}
+		&__path {
+			fill: none;
+			stroke: #fff;
+			stroke-width: 1px;
+		}
+		&__data {
+			display: none;
+			&.trans-enter {
+				display: block;
+				opacity: 0;
+				&-active {
+					opacity: 1;
+					transition: opacity 0.3s ease-in;
+				}
+			}
+			&.trans-enter-done {
+				display: block;
+			}
+			&.trans-exit {
+				display: block;
+				opacity: 1;
+				&-active {
+					opacity: 0;
+					transition: opacity 0.6s ease-out 0.4s;
+				}
+			}
+		}
+	}
+}
+body:not(.withJs) {
+	.infogram_sheme {
+		.is {
+			&__data {
+				&:first-child {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 980px) and (orientation: landscape) {
+	.infogram_sheme {
+		.is {
+			&__item {
+				&_h {
+					font-size: 17px;
+				}
+				&_m {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,107 @@
+@import 'mainStyles/variables/variables.scss';
+
+.infogram_cirlce {
+	position: absolute;
+	width: vw(430);
+}
+.ic {
+	&__block_wr {
+		width: 100%;
+		padding-bottom: 72.093%;
+	}
+	&__block {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	&__svg {
+		width: 100%;
+		height: 100%;
+	}
+	&__angle {
+		fill: none;
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+	&__circles, &__images{
+		fill: $color_2_light;
+		stroke: #fff;
+		stroke-width: 1px;
+		.white {
+			fill: #fff;
+		}
+		.dark {
+			stroke: none;
+		}
+	}
+	&__item {
+		cursor: pointer;
+		.white {
+			transition: opacity .4s ease;
+		}
+		&:hover {
+			.white {
+				opacity: .6;
+			}
+		}
+	}
+	&__clip {
+		fill: #000;
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+	&__current {
+		fill:#ffffff;
+		stroke:none;
+		&_inc {
+			fill: #fff;
+			stroke: none;
+		}
+		&_out {
+			fill: none;
+			stroke: $color_2_light;
+			stroke-width: 2.4px;
+		}
+	}
+	&__timer {
+		fill: none;
+		stroke: $color_2_dark;
+		stroke-width: 2px;
+		// stroke-dasharray: 320;
+		// stroke-dashoffset: 160;
+	}
+	&__nav {
+		cursor: pointer;
+		rect {
+			fill: $color_2_light;
+			stroke: none;
+			fill-opacity: 0;
+		}
+		path {
+			fill: none;
+			stroke: #fff;
+			stroke-width: 2px;
+		}
+	}
+}
+
+body.withJs {
+	.infogram_cirlce {
+		.ic {
+			&__block {
+				transform-origin: 35% 0;
+				transform: scale(0, 1);
+			}
+		}
+		&.active {
+			.ic {
+				&__block {
+					transform: none;
+					transition: transform .6s ease .8s;
+				}
+			}
+		}
+	}
+}
